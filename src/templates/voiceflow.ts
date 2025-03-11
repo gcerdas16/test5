@@ -7,6 +7,7 @@ import fs, { stat } from "fs";
 import { downloadFileBaileys } from "~/utils/downloader";
 import { voice2text } from "~/services/voice2txt";
 import { removeFile } from "~/utils/remover";
+import { sendImageFlow } from "./list_templates/sendImageFlow";
 
 const pathPrompt = path.join(
     process.cwd(),
@@ -43,6 +44,17 @@ export const voiceflow = addKeyword(EVENTS.VOICE_NOTE).addAction(
             //humanoflow2
             //);
             //}
+            const responseformatted = response.replace(/\*\*(.*?)\*\*/g, '*$1*');
+            if (responseformatted.includes("Instagram")) {
+                console.log("Voy para el flujo de video")
+                await flowDynamic(responseformatted);
+                return gotoFlow(sendImageFlow)
+
+            }
+            else {
+                console.log("Me mantengo en este flujo")
+                return endFlow(responseformatted);
+            }
             removeFile(filePath.filePath)
             removeFile(filePath.fileOldPath)
             return endFlow(response);
@@ -52,4 +64,6 @@ export const voiceflow = addKeyword(EVENTS.VOICE_NOTE).addAction(
             return endFlow("Por favor, intenta de nuevo");
         }
     });
+
+
 
