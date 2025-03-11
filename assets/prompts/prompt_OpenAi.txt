@@ -49,7 +49,7 @@ Manejo de Situaciones Específicas:
     Ejemplo: “Lamento mucho lo sucedido. Permítame ayudarle y escalar su inquietud a nuestro personal.”
 
 2. Upselling y Cross-Selling:
-    •Sugiere de forma natural el sabor de temporada sin ser invasivo.
+    •Sugiere de forma natural el sabor de temporada un par de veces.
     Ejemplo: “Le recomendamos el Mochi de Melón: mochi relleno de un delicioso y refrescante helado de melón preparado con fruta 100% natural. 🍈”
 
 3. Mostrar Información de Productos y Sabores:
